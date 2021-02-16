@@ -1,12 +1,11 @@
 import React from 'react';
 import { useParams} from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import { connect } from 'react-redux';
+import { format } from "date-fns";
 
 
 function City({cities}) {
 	const { cityId } = useParams();
-	// const cities = useSelector((state) => state.cities);
 	console.log(cities);
 	
 	const city = cities.find((city) => city.id == cityId);
@@ -14,17 +13,29 @@ function City({cities}) {
 
 
 	return (
-		<>
+		<div>
 			<div>
 				<h1> Next trips to: {city?.destination}</h1>
 			</div>
-			<div>
-				<p>{city?.estimatedDuration}</p> 
-				<p>{city?.departureTime}</p> 
+					<div>
+						<div>
+							<div>
+								<span>{format(new Date(city.departureTime), 'eeee')}</span>
+								<span>{format(new Date(city.departureTime), 'hh')}</span>:
+								<span>{format(new Date(city.departureTime), 'mm')}</span>
+							</div>
+							<div>
+								<span>{format(new Date(city.departureTime), 'dd')}</span>/
+								<span>{format(new Date(city.departureTime), 'MM')}</span>/
+								<span>{format(new Date(city.departureTime), 'yyyy')}</span>
+							</div>
+						</div>
+						<button>Book a seat</button>
+				</div>
 			</div>
-			<button>Book a seat</button>
-		</>
-	);
+			)
 }
+
+
 
 export default connect((state) => ({ cities: state.cities }), {})(City);

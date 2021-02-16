@@ -16,7 +16,7 @@ function showCitiesList() {
 }
 return (
     <div>
-        <h1>🚐Where are you going</h1>
+        <h1>Where are you going</h1>
         {showCitiesList()}
     </div>
 )
