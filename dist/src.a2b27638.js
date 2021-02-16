@@ -37901,6 +37901,8 @@ exports.default = ListOfCities;
 
 var _react = _interopRequireDefault(require("react"));
 
+var _reactRouterDom = require("react-router-dom");
+
 var _reactRedux = require("react-redux");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -37913,16 +37915,17 @@ function ListOfCities() {
 
   function showCitiesList() {
     var citiesLists = citiesList.map(function (city) {
-      return /*#__PURE__*/_react.default.createElement("div", {
-        key: city.id
+      return /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+        key: city.id,
+        to: "/city/".concat(city.id)
       }, /*#__PURE__*/_react.default.createElement("button", null, city.destination));
     });
     return citiesLists;
   }
 
-  return /*#__PURE__*/_react.default.createElement("div", null, showCitiesList());
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "\uD83D\uDE90Where are you going"), showCitiesList());
 }
-},{"react":"node_modules/react/index.js","react-redux":"node_modules/react-redux/es/index.js"}],"src/containers/ListOfCities.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","react-redux":"node_modules/react-redux/es/index.js"}],"src/containers/ListOfCities.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37952,7 +37955,45 @@ var mapDispatchToProps = {
 var _default = (0, _reactRedux.connect)(mapPropsToState, mapDispatchToProps)(_ListOfCities.default);
 
 exports.default = _default;
-},{"react-redux":"node_modules/react-redux/es/index.js","../actions":"src/actions/index.js","../components/ListOfCities":"src/components/ListOfCities.js"}],"src/App.js":[function(require,module,exports) {
+},{"react-redux":"node_modules/react-redux/es/index.js","../actions":"src/actions/index.js","../components/ListOfCities":"src/components/ListOfCities.js"}],"src/components/City.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _reactRouterDom = require("react-router-dom");
+
+var _reactRedux = require("react-redux");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function City(_ref) {
+  var cities = _ref.cities;
+
+  var _useParams = (0, _reactRouterDom.useParams)(),
+      cityId = _useParams.cityId; // const cities = useSelector((state) => state.cities);
+
+
+  console.log(cities);
+  var city = cities.find(function (city) {
+    return city.id == cityId;
+  });
+  console.log(city);
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, " Next trips to: ", city === null || city === void 0 ? void 0 : city.destination)), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", null, city === null || city === void 0 ? void 0 : city.estimatedDuration), /*#__PURE__*/_react.default.createElement("p", null, city === null || city === void 0 ? void 0 : city.departureTime)), /*#__PURE__*/_react.default.createElement("button", null, "Book a seat"));
+}
+
+var _default = (0, _reactRedux.connect)(function (state) {
+  return {
+    cities: state.cities
+  };
+}, {})(City);
+
+exports.default = _default;
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","react-redux":"node_modules/react-redux/es/index.js"}],"src/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37962,14 +38003,28 @@ exports.default = App;
 
 var _react = _interopRequireDefault(require("react"));
 
+var _reactRouterDom = require("react-router-dom");
+
 var _ListOfCities = _interopRequireDefault(require("./containers/ListOfCities"));
+
+var _City = _interopRequireDefault(require("./components/City"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function App() {
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Mahanoro Station"), /*#__PURE__*/_react.default.createElement(_ListOfCities.default, null));
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "/"
+  }, /*#__PURE__*/_react.default.createElement("h1", null, "Mahanoro Station")), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "/myAccount"
+  }, /*#__PURE__*/_react.default.createElement("h3", null, "My account")), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    exact: true,
+    path: "/"
+  }, /*#__PURE__*/_react.default.createElement(_ListOfCities.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    exact: true,
+    path: "/city/:cityId"
+  }, /*#__PURE__*/_react.default.createElement(_City.default, null))));
 }
-},{"react":"node_modules/react/index.js","./containers/ListOfCities":"src/containers/ListOfCities.js"}],"src/state.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./containers/ListOfCities":"src/containers/ListOfCities.js","./components/City":"src/components/City.js"}],"src/state.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39734,7 +39789,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50902" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50672" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

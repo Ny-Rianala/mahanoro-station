@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useSelector } from 'react-redux';
 
 
@@ -8,13 +9,16 @@ export default function ListOfCities() {
 
 function showCitiesList() {
     const citiesLists = citiesList.map((city) => 
-            <div key = {city.id}>
+            <Link key = {city.id} to={`/city/${city.id}`}>
                 <button>{city.destination}</button>
-            </div>);
+            </Link>);
     return citiesLists;
 }
 return (
-    <div>{showCitiesList()}</div>
+    <div>
+        <h1>🚐Where are you going</h1>
+        {showCitiesList()}
+    </div>
 )
 
 }
