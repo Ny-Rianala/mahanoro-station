@@ -1,7 +1,9 @@
 import React from "react";
 import { Switch, Route, Link } from 'react-router-dom';
 import ListOfCities from "./containers/ListOfCities";
-import City from "./components/City"
+import City from "./components/City";
+import Booking from "./components/Booking";
+
 
 export default function App() {
     return (
@@ -19,6 +21,9 @@ export default function App() {
                 <Route exact path="/city/:cityId">
 					<City />
 				</Route>
+                <Route exact path="/booking/:id">
+                    <Booking />
+                </Route>
             </Switch>
         </>
     )

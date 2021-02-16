@@ -56256,7 +56256,9 @@ function City(_ref) {
     return city.id == cityId;
   });
   console.log(city);
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, " Next trips to: ", city === null || city === void 0 ? void 0 : city.destination)), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(city.departureTime), 'eeee')), /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(city.departureTime), 'hh')), ":", /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(city.departureTime), 'mm'))), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(city.departureTime), 'dd')), "/", /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(city.departureTime), 'MM')), "/", /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(city.departureTime), 'yyyy')))), /*#__PURE__*/_react.default.createElement("button", null, "Book a seat")));
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, " Next trips to: ", city === null || city === void 0 ? void 0 : city.destination)), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(city.departureTime), 'eeee')), /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(city.departureTime), 'hh')), ":", /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(city.departureTime), 'mm'))), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(city.departureTime), 'dd')), "/", /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(city.departureTime), 'MM')), "/", /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(city.departureTime), 'yyyy')))), /*#__PURE__*/_react.default.createElement("button", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "/booking/".concat(city.id)
+  }, "Book a seat"))));
 }
 
 var _default = (0, _reactRedux.connect)(function (state) {
@@ -56266,7 +56268,46 @@ var _default = (0, _reactRedux.connect)(function (state) {
 }, {})(City);
 
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","react-redux":"node_modules/react-redux/es/index.js","date-fns":"node_modules/date-fns/esm/index.js"}],"src/App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","react-redux":"node_modules/react-redux/es/index.js","date-fns":"node_modules/date-fns/esm/index.js"}],"src/components/Booking.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _reactRouter = require("react-router");
+
+var _reactRedux = require("react-redux");
+
+var _dateFns = require("date-fns");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Booking(_ref) {
+  var cities = _ref.cities;
+
+  var _useParams = (0, _reactRouter.useParams)(),
+      id = _useParams.id;
+
+  var bookseat = cities.find(function (city) {
+    return city.id == id;
+  });
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Book a seat to:"), /*#__PURE__*/_react.default.createElement("h2", null, bookseat === null || bookseat === void 0 ? void 0 : bookseat.destination)), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h3", null, "Pick a seat")), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h4", null, "Trip informations"), /*#__PURE__*/_react.default.createElement("div", {
+    key: bookseat.id
+  }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(bookseat.departureTime), 'eeee')), /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(bookseat.departureTime), 'hh')), ":", /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(bookseat.departureTime), 'mm')), ",", /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(bookseat.departureTime), 'dd')), "/", /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(bookseat.departureTime), 'MM')), "/", /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(bookseat.departureTime), 'yyyy'))), /*#__PURE__*/_react.default.createElement("p", null, "Driver's name: ", bookseat.driverName), /*#__PURE__*/_react.default.createElement("p", null, "Driver's contact: ", bookseat.driverContact), /*#__PURE__*/_react.default.createElement("p", null, "Estimated duration: ", bookseat.estimatedDuration), /*#__PURE__*/_react.default.createElement("p", null, "Breaks: ", bookseat.breaks)), /*#__PURE__*/_react.default.createElement("p", null, bookseat.price, "Ar/seat"))));
+}
+
+var _default = (0, _reactRedux.connect)(function (state) {
+  return {
+    cities: state.cities
+  };
+}, {})(Booking);
+
+exports.default = _default;
+},{"react":"node_modules/react/index.js","react-router":"node_modules/react-router/esm/react-router.js","react-redux":"node_modules/react-redux/es/index.js","date-fns":"node_modules/date-fns/esm/index.js"}],"src/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -56282,6 +56323,8 @@ var _ListOfCities = _interopRequireDefault(require("./containers/ListOfCities"))
 
 var _City = _interopRequireDefault(require("./components/City"));
 
+var _Booking = _interopRequireDefault(require("./components/Booking"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function App() {
@@ -56295,9 +56338,12 @@ function App() {
   }, /*#__PURE__*/_react.default.createElement(_ListOfCities.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     exact: true,
     path: "/city/:cityId"
-  }, /*#__PURE__*/_react.default.createElement(_City.default, null))));
+  }, /*#__PURE__*/_react.default.createElement(_City.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    exact: true,
+    path: "/booking/:id"
+  }, /*#__PURE__*/_react.default.createElement(_Booking.default, null))));
 }
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./containers/ListOfCities":"src/containers/ListOfCities.js","./components/City":"src/components/City.js"}],"src/state.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./containers/ListOfCities":"src/containers/ListOfCities.js","./components/City":"src/components/City.js","./components/Booking":"src/components/Booking.js"}],"src/state.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -57964,7 +58010,6 @@ function cities() {
   var cities = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
   var action = arguments.length > 1 ? arguments[1] : undefined;
 
-  // console.log(cities);
   switch (action.type) {
     case "CITIES_LIST":
       return [].concat(_toConsumableArray(state), [action.payload]);

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams} from 'react-router-dom';
+import { useParams, Link} from 'react-router-dom';
 import { connect } from 'react-redux';
 import { format } from "date-fns";
 
@@ -30,7 +30,9 @@ function City({cities}) {
 								<span>{format(new Date(city.departureTime), 'yyyy')}</span>
 							</div>
 						</div>
-						<button>Book a seat</button>
+						<button>
+						    <Link to={`/booking/${city.id}`}>Book a seat</Link>
+						</button>
 				</div>
 			</div>
 			)
