@@ -74,7 +74,7 @@ const ButtonStyle = styled.div`
 function City({cities}) {
 	const { cityId } = useParams();
 	console.log(cities);
-	
+
 	const city = cities.find((city) => city.id == cityId);
 	console.log(city);
 

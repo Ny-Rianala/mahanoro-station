@@ -39891,7 +39891,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n    background-color: #0F0E17;\n    padding-top: 28px;\n    padding-left: 98px;\n    padding-bottom: 29px;\n    padding-right: 44px;\n    border: none;\n    color: white;\n    text-transform: uppercase;\n    font-size: 18px;\n    margin-bottom: 20px;\n    margin-left: 10px;\n    text-align: center;\n    cursor: pointer;\n;"]);
+  var data = _taggedTemplateLiteral(["\n    background-color: #0F0E17;\n    padding-top: 28px;\n    padding-left: 70px;\n    padding-bottom: 29px;\n    padding-right: 44px;\n    border: none;\n    color: white;\n    text-transform: uppercase;\n    font-size: 18px;\n    margin-bottom: 20px;\n    margin-left: 10px;\n    text-align: center;\n    cursor: pointer;\n;"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -39914,13 +39914,7 @@ function ListOfCities() {
 
   function showCitiesList() {
     var n = 6;
-    var destination = citiesList.some(function (ele) {
-      return ele === "Antananarivo" || ele === "Toamasina";
-    });
-    console.log(destination);
-    var citiesLists = citiesList.sort(function () {
-      return 0.5;
-    }).slice(2, n).map(function (city) {
+    var citiesLists = citiesList.slice(2, n).map(function (city) {
       return /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
         key: city.id,
         to: "/city/".concat(city.id)
@@ -60307,7 +60301,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57014" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63230" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
