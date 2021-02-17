@@ -58249,7 +58249,95 @@ var _reactRedux = require("react-redux");
 
 var _dateFns = require("date-fns");
 
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _templateObject7() {
+  var data = _taggedTemplateLiteral(["\n\tbackground-color: #E53170;\n    padding-top: 20px;\n    padding-left: 20px;\n    padding-bottom: 20px;\n    padding-right: 20px;\n\twidth: 194px;\n    border: none;\n\ttext-align: center;\n\tmargin-left: 20px;\n\tfont-size: 18px;\n\tfont-weight: bold;\n\ta {\n\t\tcolor: white;\n\t}\n"]);
+
+  _templateObject7 = function _templateObject7() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject6() {
+  var data = _taggedTemplateLiteral(["\n\tpadding-right: 400px;\n"]);
+
+  _templateObject6 = function _templateObject6() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject5() {
+  var data = _taggedTemplateLiteral(["\n\tdisplay: flex;\n\tflex-direction: column;\n\tfont-size: 18px;\n\tcolor: #FF8906;\n\tpadding-left: 20px;\n"]);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  var data = _taggedTemplateLiteral(["\n\tdisplay: flex;\n\tflex-direction: row;\n\tjustify-content: space-between;\n"]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(["\n    color: #E53170;\n\tfont-size: 32px;\n\tmargin-bottom: 1px; \n\tmargin-left: 10px;\n"]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n\tdisplay: flex;\n\tflex-direction: row;\n\tpadding-left: 20px;\n\tpadding-top: 30px;\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n\tdisplay: flex;\n\tflex-direction: column;\n\talign-items: left;\n\n\t@media(min-width: 1000px) {\n\t\tdisplay: flex;\n\t\tflex-direction: row;\n\t\talign-items: center;\n\t}\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var CityTripStyle = _styledComponents.default.div(_templateObject());
+
+var Headings = _styledComponents.default.div(_templateObject2());
+
+var Destination = _styledComponents.default.h2(_templateObject3());
+
+var TimeContainer = _styledComponents.default.div(_templateObject4());
+
+var Day = _styledComponents.default.div(_templateObject5());
+
+var DateStyle = _styledComponents.default.div(_templateObject6());
+
+var ButtonStyle = _styledComponents.default.div(_templateObject7());
 
 function City(_ref) {
   var cities = _ref.cities;
@@ -58262,9 +58350,9 @@ function City(_ref) {
     return city.id == cityId;
   });
   console.log(city);
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, " Next trips to: ", city === null || city === void 0 ? void 0 : city.destination)), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(city.departureTime), 'eeee')), /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(city.departureTime), 'hh')), ":", /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(city.departureTime), 'mm'))), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(city.departureTime), 'dd')), "/", /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(city.departureTime), 'MM')), "/", /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(city.departureTime), 'yyyy')))), /*#__PURE__*/_react.default.createElement("button", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+  return /*#__PURE__*/_react.default.createElement(CityTripStyle, null, /*#__PURE__*/_react.default.createElement(Headings, null, /*#__PURE__*/_react.default.createElement("h1", null, " Next trips to:"), /*#__PURE__*/_react.default.createElement(Destination, null, city === null || city === void 0 ? void 0 : city.destination)), /*#__PURE__*/_react.default.createElement(TimeContainer, null, /*#__PURE__*/_react.default.createElement(Day, null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(city.departureTime), 'eeee'))), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(city.departureTime), 'hh')), ":", /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(city.departureTime), 'mm')))), /*#__PURE__*/_react.default.createElement(DateStyle, null, /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(city.departureTime), 'dd')), "/", /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(city.departureTime), 'MM')), "/", /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(city.departureTime), 'yyyy')))), /*#__PURE__*/_react.default.createElement(ButtonStyle, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/booking/".concat(city.id)
-  }, "Book a seat"))));
+  }, "Book a seat")));
 }
 
 var _default = (0, _reactRedux.connect)(function (state) {
@@ -58274,7 +58362,7 @@ var _default = (0, _reactRedux.connect)(function (state) {
 }, {})(City);
 
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","react-redux":"node_modules/react-redux/es/index.js","date-fns":"node_modules/date-fns/esm/index.js"}],"src/components/Booking.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","react-redux":"node_modules/react-redux/es/index.js","date-fns":"node_modules/date-fns/esm/index.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/components/Booking.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -58301,7 +58389,7 @@ function Booking(_ref) {
   var bookseat = cities.find(function (city) {
     return city.id == id;
   });
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Book a seat to:"), /*#__PURE__*/_react.default.createElement("h2", null, bookseat === null || bookseat === void 0 ? void 0 : bookseat.destination)), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h3", null, "Pick a seat")), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h4", null, "Trip informations"), /*#__PURE__*/_react.default.createElement("div", {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Book a seat to:"), /*#__PURE__*/_react.default.createElement("h2", null, bookseat === null || bookseat === void 0 ? void 0 : bookseat.h2)), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h3", null, "Pick a seat")), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h4", null, "Trip informations"), /*#__PURE__*/_react.default.createElement("div", {
     key: bookseat.id
   }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(bookseat.departureTime), 'eeee')), /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(bookseat.departureTime), 'hh')), ":", /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(bookseat.departureTime), 'mm')), ",", /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(bookseat.departureTime), 'dd')), "/", /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(bookseat.departureTime), 'MM')), "/", /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(bookseat.departureTime), 'yyyy'))), /*#__PURE__*/_react.default.createElement("p", null, "Driver's name: ", bookseat.driverName), /*#__PURE__*/_react.default.createElement("p", null, "Driver's contact: ", bookseat.driverContact), /*#__PURE__*/_react.default.createElement("p", null, "Estimated duration: ", bookseat.estimatedDuration), /*#__PURE__*/_react.default.createElement("p", null, "Breaks: ", bookseat.breaks)), /*#__PURE__*/_react.default.createElement("p", null, bookseat.price, "Ar/seat"))));
 }
@@ -60092,7 +60180,7 @@ exports.GlobalStyles = void 0;
 var _styledComponents = require("styled-components");
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n    html, body , a{\n        font-family: 'Helvetica Neue', Helvetica, sans-serif;\n        -webkit-font-smoothing: antialiased;\n        -moz-osx-font-smoothing: antialiased;\n        color: #333333;\n        font-size: 16px;\n        margin: 0;\n        list-style: none;\n        text-decoration: none;\n    }\n"]);
+  var data = _taggedTemplateLiteral(["\n    html, body , a{\n        font-family: 'Helvetica Neue', Helvetica, sans-serif;\n        -webkit-font-smoothing: antialiased;\n        -moz-osx-font-smoothing: antialiased;\n        /* color: #333333; */\n        font-size: 16px;\n        margin: 0;\n        list-style: none;\n        text-decoration: none;\n    }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -60155,7 +60243,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53803" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57014" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

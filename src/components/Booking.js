@@ -13,7 +13,7 @@ function Booking({cities}) {
         <>
             <div>
                 <h1>Book a seat to:</h1>
-                <h2>{bookseat?.destination}</h2>
+                <h2>{bookseat?.h2}</h2>
             </div>
             <div>
                 <div>
