@@ -58378,7 +58378,71 @@ var _reactRedux = require("react-redux");
 
 var _dateFns = require("date-fns");
 
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _templateObject5() {
+  var data = _taggedTemplateLiteral(["\n    color: #FF8906;\n"]);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  var data = _taggedTemplateLiteral(["\n    display: flex;\n    flex-direction: row;\n    \n    p {\n        padding-left: 20px;\n        padding-top: 8px;\n        font-weight: bold;\n        font-size: 18px;\n    }\n"]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(["\n    display: grid;\n    grid-template-columns: 50% 50%;\n    margin-left: 10px;\n    h3, h4 {\n        text-transform: uppercase;\n        font-size: 18px;\n    }\n    label{\n        color: #94989B;\n        margin-right: 20px;\n    }\n    \n "]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n    color: #E53170;\n\tfont-size: 32px;\n    padding-top: 23px;\n\tmargin-left: 10px;\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n    display: flex;\n\tflex-direction: row;\n    margin-left: 10px;\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var Headings = _styledComponents.default.div(_templateObject());
+
+var Destination = _styledComponents.default.div(_templateObject2());
+
+var InfoStyle = _styledComponents.default.div(_templateObject3());
+
+var PriceStyle = _styledComponents.default.div(_templateObject4());
+
+var Price = _styledComponents.default.h2(_templateObject5());
 
 function Booking(_ref) {
   var cities = _ref.cities;
@@ -58389,9 +58453,9 @@ function Booking(_ref) {
   var bookseat = cities.find(function (city) {
     return city.id == id;
   });
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Book a seat to:"), /*#__PURE__*/_react.default.createElement("h2", null, bookseat === null || bookseat === void 0 ? void 0 : bookseat.h2)), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h3", null, "Pick a seat")), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h4", null, "Trip informations"), /*#__PURE__*/_react.default.createElement("div", {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(Headings, null, /*#__PURE__*/_react.default.createElement("h1", null, "Book a seat to:"), /*#__PURE__*/_react.default.createElement(Destination, null, bookseat === null || bookseat === void 0 ? void 0 : bookseat.destination)), /*#__PURE__*/_react.default.createElement(InfoStyle, null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h3", null, "Pick a seat")), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h4", null, "Trip informations"), /*#__PURE__*/_react.default.createElement("div", {
     key: bookseat.id
-  }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(bookseat.departureTime), 'eeee')), /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(bookseat.departureTime), 'hh')), ":", /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(bookseat.departureTime), 'mm')), ",", /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(bookseat.departureTime), 'dd')), "/", /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(bookseat.departureTime), 'MM')), "/", /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(bookseat.departureTime), 'yyyy'))), /*#__PURE__*/_react.default.createElement("p", null, "Driver's name: ", bookseat.driverName), /*#__PURE__*/_react.default.createElement("p", null, "Driver's contact: ", bookseat.driverContact), /*#__PURE__*/_react.default.createElement("p", null, "Estimated duration: ", bookseat.estimatedDuration), /*#__PURE__*/_react.default.createElement("p", null, "Breaks: ", bookseat.breaks)), /*#__PURE__*/_react.default.createElement("p", null, bookseat.price, "Ar/seat"))));
+  }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("label", null, "Departure Time:"), /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(bookseat.departureTime), 'hh')), ":", /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(bookseat.departureTime), 'mm')), ",", /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(bookseat.departureTime), 'dd')), "/", /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(bookseat.departureTime), 'MM')), "/", /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(new Date(bookseat.departureTime), 'yyyy'))), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("label", null, "Driver's name:"), bookseat.driverName), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("label", null, "Driver's contact:"), " ", bookseat.driverContact), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("label", null, "Estimated duration:"), " ", bookseat.estimatedDuration), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("label", null, "Breaks: "), bookseat.breaks)), /*#__PURE__*/_react.default.createElement(PriceStyle, null, /*#__PURE__*/_react.default.createElement(Price, null, bookseat.price), /*#__PURE__*/_react.default.createElement("p", null, "Ar/seat")))));
 }
 
 var _default = (0, _reactRedux.connect)(function (state) {
@@ -58401,7 +58465,7 @@ var _default = (0, _reactRedux.connect)(function (state) {
 }, {})(Booking);
 
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-router":"node_modules/react-router/esm/react-router.js","react-redux":"node_modules/react-redux/es/index.js","date-fns":"node_modules/date-fns/esm/index.js"}],"src/App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router":"node_modules/react-router/esm/react-router.js","react-redux":"node_modules/react-redux/es/index.js","date-fns":"node_modules/date-fns/esm/index.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
